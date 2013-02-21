@@ -1,0 +1,48 @@
+<h1>Listing Flights</h1>
+
+<table id='flights'>
+  
+  <thead>
+  <tr>
+    <th>Flight_Name</th>
+    <th>Departure</th>
+    <th>Arrival</th>
+    <th>Source</th>
+    <th>Destination</th>
+    <th>Baggage allowance</th>
+    <th>Capacity</th>
+  </tr>
+</thead>
+
+<tbody>
+<% @flight.each do |flight| %>
+  <tr>
+    <td><%=flight.flight_name %></td>
+    <td><%=flight.departure %></td>
+    <td><%=flight.arrival %></td>
+    <td><%=flight.source %></td>
+    <td><%=flight.destination %></td>
+    <td><%=flight.baggage_allowance %></td>
+    <td><%=flight.capacity %></td>  
+
+    <td><%= link_to 'Reservation', flight %></td>
+      
+      <% if can? :view, @flight %>
+      <td><%= link_to 'view' ,{:action=>'view',:id=>flight.id} %></td>
+  <% end %>
+       <% if can? :update, @flight %>
+    <td><%= link_to 'Edit', edit_flight_path(flight) %></td>
+    <% end %>
+    <% if can? :destroy, @flight %>
+    <td><%= link_to 'Destroy', flight, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
+  
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+<% if can? :new, @flight %>
+<%= link_to 'New flight', new_flight_path %>
+<% end %>

@@ -1,0 +1,25 @@
+
+
+<table id="flights">
+  <thead>
+  <tr>
+    <th>Flight</th>
+    <th>Name</th>
+    <th>Baggage</th>
+  </tr>
+</thead>
+<tbody>
+<% seat.each do |seat| %>
+  <tr>
+    <td><%=seat.flight_id %></td>
+    <td><%=seat.name %></td>
+    <td><%=seat.baggage %></td>
+    
+  </tr>
+<% end %>
+</tbody>
+</table>
+<br />
+
+
+

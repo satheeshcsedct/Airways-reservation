@@ -1,0 +1,25 @@
+<h2>Ticket Reservation Form </h2>
+<%= form_for (seat) do |f| %>
+  <%=f.error_messages%>
+
+  <p>
+
+    <%= f.hidden_field :flight_id %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :baggage %><br />
+    <%= f.text_field :baggage %>
+  </p>
+  <p>
+    <%= f.submit "Create"  %>
+  </p>
+  
+<% end %>
+
+
+
+    

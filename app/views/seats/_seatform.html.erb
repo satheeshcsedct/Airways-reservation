@@ -1,0 +1,17 @@
+<%= form_for(@seat) do |f| %>
+  <p>
+    <%= f.label :flight_id %><br />
+    <%= f.text_field :flight_id %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :baggage %><br />
+    <%= f.text_field :baggage %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>

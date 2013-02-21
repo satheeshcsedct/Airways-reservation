@@ -1,0 +1,41 @@
+<table >
+<thead>
+<tr>
+<th>Flight_name:</th>
+   <th>Departure:</th>
+<th>Arrival:</th>
+<th>Source:</th>
+<th>Destination:</th>
+<th>Baggage allowance:</th>
+  <th>Capacity:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><%=@flight.flight_name %></td>
+
+<td><%=@flight.departure %></td>
+
+<td><%=@flight.arrival %></td>
+
+<td> <%=@flight.source %></td>
+
+<td><%=@flight.destination %></td>
+
+<td><%=@flight.baggage_allowance %></td>
+
+
+
+ <td> <%=@flight.capacity %></td>
+</tr>
+</tbody>
+</table>
+</br>
+
+
+
+<br/>
+<%= render :partial=>"seatform", :locals=>{:seat=>Seat.new(:flight_id=>@flight.id)} %>
+
+<%= link_to 'Back', flights_path %>
+<%= link_to 'showseat', seats_path %>
